@@ -1,15 +1,13 @@
-# Usa Docker Compose para construir tudo
-FROM docker/compose:1.29.2
+FROM node:18-alpine
 
-WORKDIR /app
+WORKDIR /app/backend
 
-# Copia todos os arquivos necessários
-COPY docker-compose.yml .
-COPY backend/ ./backend/
-COPY frontend/ ./frontend/
+COPY backend/package*.json ./
+RUN npm install
 
-# Expõe as portas do frontend e backend
-EXPOSE 3000 5000
+COPY backend/ .
+RUN npm run build
 
-# Comando para iniciar todos os serviços
-CMD ["docker-compose", "up", "--build"]
+EXPOSE 3000
+
+CMD ["node", "dist/main"]
