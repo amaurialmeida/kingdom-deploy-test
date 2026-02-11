@@ -1,11 +1,11 @@
-import { ValidationPipe } from '@nestjs/common';
+﻿import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { AUTH_MESSAGES } from './auth/messages/auth.message';
 import { validationExceptionFactory } from './common/exceptions/validation.factory';
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
@@ -39,8 +39,8 @@ async function bootstrap() {
     }),
   );
 
-  await app.listen(port, function () {
-    console.log(`BACKEND is running on port ${port}.`);
+  await app.listen(port, '0.0.0.0', function () { // ✅ ADICIONADO '0.0.0.0'
+    console.log(`🚀 BACKEND is running on port ${port}`);
   });
 }
 void bootstrap();
