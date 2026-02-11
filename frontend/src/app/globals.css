@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* Tipografia */
+  --font-nunito: "Nunito", sans-serif;
+  --font-dynapuff: "DynaPuff", cursive;
+}
+
+@theme {
+  /* Primary */
+  --color-primary-100: #feede8;
+  --color-primary-200: #fcbea7;
+
+  /* Secondary */
+  --color-secondary-100: #ecf0ff;
+  --color-secondary-200: #b4c7fe;
+  --color-secondary-300: #759ffe;
+  --color-secondary-400: #0c78f4;
+  --color-secondary-700: #01193c;
+
+  /* Tertiary */
+  --color-tertiary-100: #ffd3e1;
+  --color-tertiary-200: #ff98be;
+  --color-tertiary-300: #ff479d;
+
+  /* Grey */
+  --color-grey-100: #f1f0f0;
+  --color-grey-700: #f1f0f0;
+}
