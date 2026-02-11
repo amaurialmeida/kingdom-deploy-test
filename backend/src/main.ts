@@ -39,7 +39,7 @@ async function bootstrap() {
     }),
   );
 
-  await app.listen(port, '0.0.0.0', function () { // ✅ ADICIONADO '0.0.0.0'
+  await app.listen(port, '0.0.0.0', function () {
     console.log(`🚀 BACKEND is running on port ${port}`);
   });
 }
